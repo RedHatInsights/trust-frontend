@@ -5,7 +5,6 @@ import { Split, SplitItem } from '@patternfly/react-core/dist/esm/layouts/Split/
 
 import React from 'react';
 import messages from '../../Messages';
-import routerParams from '@redhat-cloud-services/frontend-components-utilities/files/RouterParams';
 import { useIntl } from 'react-intl';
 
 const OverviewTab = () => {
@@ -45,4 +44,4 @@ const OverviewTab = () => {
     </div>;
 };
 
-export default routerParams(OverviewTab);
+export default OverviewTab;

@@ -10,7 +10,9 @@ import messages from '../../Messages';
 import routerParams from '@redhat-cloud-services/frontend-components-utilities/files/RouterParams';
 import { useIntl } from 'react-intl';
 
-const Overview = lazy(() => import(/* webpackChunkName: "Overview" */ '../../Components/Overview/Overview'));
+const Overview = lazy(() => import(/* webpackChunkName: "Overview" */ '../../Components/Tabs/Overview'));
+const DataCollection = lazy(() => import(/* webpackChunkName: "DataCollection" */ '../../Components/Tabs/DataCollection'));
+const DataProtection = lazy(() => import(/* webpackChunkName: "DataProtection" */ '../../Components/Tabs/DataProtection'));
 
 const TrustTabs = ({ history, location }) => {
     const intl = useIntl();
@@ -20,10 +22,10 @@ const TrustTabs = ({ history, location }) => {
         component: <Suspense fallback={<Loading />}> <Overview /> </Suspense>
     }, {
         key: 1, title: intl.formatMessage(messages.dataCollection), to: '/datacollection',
-        component: <Suspense fallback={<Loading />}> poddop </Suspense>
+        component: <Suspense fallback={<Loading />}> <DataCollection /> </Suspense>
     }, {
         key: 2, title: intl.formatMessage(messages.dataProtection), to: '/dataprotection',
-        component: <Suspense fallback={<Loading />}> poasop </Suspense>
+        component: <Suspense fallback={<Loading />}> <DataProtection /> </Suspense>
     }, {
         key: 3, title: intl.formatMessage(messages.faq), to: '/faq',
         component: <Suspense fallback={<Loading />}>  </Suspense>
@@ -33,7 +35,7 @@ const TrustTabs = ({ history, location }) => {
     useEffect(() => {
         const activeTab = location.pathname !== '/' ? tabs.find((tab => tab.to === location.pathname)).key : 0;
         setActiveTabKey(activeTab);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleTabClick = (event, tabKey) => {
