@@ -1,6 +1,7 @@
 import './Overview.scss';
 
 import { Card, CardBody, CardTitle, Title, TitleSizes } from '@patternfly/react-core/dist/esm/components';
+import { Split, SplitItem } from '@patternfly/react-core/dist/esm/layouts/Split/index';
 
 import React from 'react';
 import messages from '../../Messages';
@@ -23,16 +24,24 @@ const OverviewTab = () => {
         title: intl.formatMessage(messages.onlyOneUploaded),
         body: intl.formatMessage(messages.onlyOneUploadedBody)
     }];
-    const cardBuilder = card => <Card className='ins-c-card'>
-        <CardTitle>{card.title}</CardTitle>
-        <CardBody>{card.body}</CardBody>
+    const cardBuilder = (card, index) => <Card className='ins-c-card'>
+        <Split>
+            <SplitItem>
+                <span className='ins-c-cardNumber'>{index + 1}.</span>
+            </SplitItem>
+            <SplitItem>
+                <CardTitle>{card.title}</CardTitle>
+                <CardBody>{card.body}</CardBody>
+            </SplitItem>
+        </Split>
+
     </Card>;
 
     return <div className='ins-c-flex-center'>
         <Title headingLevel='h2' size={TitleSizes.lg} className='ins-c-title'>
             {intl.formatMessage(messages.dataPrivacy)}
         </Title>
-        {steps.map(step => cardBuilder(step))}
+        {steps.map((step, index) => cardBuilder(step, index))}
     </div>;
 };
 
