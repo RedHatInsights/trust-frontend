@@ -11,3 +11,7 @@
     display: inherit;
     font-weight: var(--pf-global--FontWeight--bold);
 }
+
+.pf-c-card__title {
+    padding-bottom: 0 !important;
+}

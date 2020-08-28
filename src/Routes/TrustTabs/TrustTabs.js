@@ -47,7 +47,7 @@ const TrustTabs = ({ history, location }) => {
     return <React.Fragment>
         <PageHeader>
             <TextContent className='ins-c-flex-center'>
-                <Title headingLevel='h1' size={TitleSizes['2xl']}>
+                <Title headingLevel='h1' size={TitleSizes['3xl']}>
                     {intl.formatMessage(messages.redHatInsightsSecurity)}
                 </Title>
                 <Text className='ins-c-flex-center__text'>
@@ -62,12 +62,14 @@ const TrustTabs = ({ history, location }) => {
             </TextContent>
         </PageHeader>
         <Main>
-            <Tabs className='ins-c-flex-center' activeKey={activeTabKey} onSelect={handleTabClick} aria-label="Insights Tabs">
-                {tabs.map(item =>
-                    <Tab key={item.key} eventKey={item.key} title={<TabTitleText>{item.title}</TabTitleText>}>
-                        {item.component}
-                    </Tab>)}
-            </Tabs>
+            <div className='ins-c-flex-center'>
+                <Tabs activeKey={activeTabKey} onSelect={handleTabClick} aria-label="Insights Tabs">
+                    {tabs.map(item =>
+                        <Tab key={item.key} eventKey={item.key} title={<TabTitleText>{item.title}</TabTitleText>}>
+                            {item.component}
+                        </Tab>)}
+                </Tabs>
+            </div>
         </Main>
     </React.Fragment >;
 };

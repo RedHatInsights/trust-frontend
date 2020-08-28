@@ -23,7 +23,7 @@ const OverviewTab = () => {
         title: intl.formatMessage(messages.onlyOneUploaded),
         body: intl.formatMessage(messages.onlyOneUploadedBody)
     }];
-    const cardBuilder = (card, index) => <Card className='ins-c-card'>
+    const cardBuilder = (card, index) => <Card className='ins-c-card' isFlat>
         <Split>
             <SplitItem>
                 <span className='ins-c-cardNumber'>{index + 1}.</span>

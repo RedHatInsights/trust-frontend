@@ -18,7 +18,7 @@ import propTypes from 'prop-types';
 
 const CardCollection = ({ collectionTitle, collectionDesc, leftCards, rightCards }) => {
 
-    const cardBuilder = card => <Card className='ins-c-collection-card'>
+    const cardBuilder = card => <Card className='ins-c-collection-card' isFlat>
         <CardTitle>{card.title}</CardTitle>
         <CardBody>{card.body}</CardBody>
         {card.footer && <CardFooter>{card.footer}</CardFooter>}

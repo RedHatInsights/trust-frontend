@@ -10,9 +10,7 @@ export default defineMessages({
     redHatInsightsSecurityBody: {
         id: 'redHatInsightsSecurityBody',
         description: 'Red Hat Insights provides a',
-        defaultMessage: `Red Hat Insights provides a mechanism for customers to get actionable intelligence regarding suggested
-        improvements to deployed Red Hat software. This document covers the security measures Red Hat puts
-        in place to provide secure transmission, processing and analysis of this data by those tools.`
+        defaultMessage: `Red Hat Insights provides a mechanism for users to obtain actionable intelligence regarding suggested improvements to deployed Red Hat software. This document covers the security measures Red Hat puts in place to provide secure transmission, processing, and analysis of this data by those tools.`
     },
     redHatInsightsSecurityBody2: {
         id: 'redHatInsightsSecurityBody2',
