@@ -13,6 +13,7 @@ import { useIntl } from 'react-intl';
 const Overview = lazy(() => import(/* webpackChunkName: "Overview" */ '../../Components/Tabs/Overview'));
 const DataCollection = lazy(() => import(/* webpackChunkName: "DataCollection" */ '../../Components/Tabs/DataCollection'));
 const DataProtection = lazy(() => import(/* webpackChunkName: "DataProtection" */ '../../Components/Tabs/DataProtection'));
+const FAQ = lazy(() => import(/* webpackChunkName: "FAQ" */ '../../Components/Tabs/FAQ'));
 
 const TrustTabs = ({ history, location }) => {
     const intl = useIntl();
@@ -28,7 +29,7 @@ const TrustTabs = ({ history, location }) => {
         component: <Suspense fallback={<Loading />}> <DataProtection /> </Suspense>
     }, {
         key: 3, title: intl.formatMessage(messages.faq), to: '/faq',
-        component: <Suspense fallback={<Loading />}>  </Suspense>
+        component: <Suspense fallback={<Loading />}> <FAQ /> </Suspense>
     }
     ];
 

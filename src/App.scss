@@ -24,3 +24,21 @@ $top-bottom-margin-lg: var(--pf-global--spacer--lg) 0;
 .pf-c-card{
     margin-top: 0 !important;
 }
+
+.faq-card {
+    width: 70%;
+    background-color: var(--pf-global--BackgroundColor--100);
+    margin-top: var(--pf-global--spacer--xl) !important;
+    padding: var(--pf-global--spacer--xl);
+
+    p {
+        margin-bottom: var(--pf-global--spacer--md);
+    }
+
+    ul {
+        list-style-type: disc;
+        list-style-position: inside;
+        padding-left: 2em;
+        margin-bottom: var(--pf-global--spacer--md);
+    }
+}
