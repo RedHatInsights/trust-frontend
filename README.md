@@ -22,15 +22,6 @@ Note: You will need to set up the Insights environment if you want to develop wi
 2. ```npm run start```
     - starts webpack bundler and serves the files with webpack dev server
 
-### Testing
-
-- `npm run verify` will run linters and tests
-- Travis is used to test the build for this code.
-  - You are always notified on failed builds
-  - You are only notified on successful builds if the build before it failed
-  - By default, both `push` events as well as `pull_request` events send notifications
-  - Travis is defaulted to notify #insights-bots
-
 ### How it works
 
 - any push to the `{REPO}` `master` branch will deploy to a `{REPO}-build` `ci-beta` branch
@@ -49,7 +40,3 @@ Have [insights-proxy](https://github.com/RedHatInsights/insights-proxy) installe
 ```shell
 SPANDX_CONFIG="./profiles/local-frontend.js" bash $PROXY_PATH/scripts/run.sh
 ```
-
-### Testing - jest
-
-When you want to test your code with unit tests please use `jest` which is preconfigured in a way to colect codecoverage as well. If you want to see your coverage on server the travis config has been set in a way that it will send data to [codecov.io](https://codecov.io) the only thing you have to do is visit their website (register), enable your repository and add CODECOV_TOKEN to your travis web config (do not add it to .travis file, but trough [travis-ci.org](https://travis-ci.org/))
