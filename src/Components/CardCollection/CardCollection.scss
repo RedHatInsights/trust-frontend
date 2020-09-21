@@ -3,10 +3,11 @@
 }
 
 .ins-c-data-collection {
-    width: 70%;
-    margin-bottom: var(--pf-global--spacer--sm);
+    max-width: 70%;
+    margin: 0 auto var(--pf-global--spacer--sm) auto;
 }
 
 .ins-c-collection-card {
+    height: 100%;
     margin-bottom: var(--pf-global--spacer--md);
 }

@@ -1,6 +1,7 @@
 import './TrustTabs.scss';
 
 import { Button, Tab, TabTitleText, Tabs, Text, TextContent, Title, TitleSizes } from '@patternfly/react-core/dist/esm/components';
+import { Flex, FlexItem } from '@patternfly/react-core';
 import { Main, PageHeader } from '@redhat-cloud-services/frontend-components';
 import React, { Suspense, lazy, useEffect, useState } from 'react';
 
@@ -47,20 +48,21 @@ const TrustTabs = ({ history, location }) => {
 
     return <React.Fragment>
         <PageHeader>
-            <TextContent className='ins-c-flex-center'>
-                <Title headingLevel='h1' size={TitleSizes['3xl']}>
-                    {intl.formatMessage(messages.redHatInsightsSecurity)}
-                </Title>
-                <Text className='ins-c-flex-center__text'>
-                    {intl.formatMessage(messages.redHatInsightsSecurityBody)}
-                </Text>
-                <Text className='ins-c-flex-center__text'>
-                    {intl.formatMessage(messages.redHatInsightsSecurityBody2)}
-                </Text>
-                <Button className='ins-c-dashboard-link' component='a' variant='primary' href='https://cloud.redhat.com/insights/' >
-                    {intl.formatMessage(messages.goto)}
-                </Button>
-            </TextContent>
+            <Flex justifyContent={{ default: 'justifyContentSpaceBetween' }}>
+                <FlexItem>
+                    <TextContent className='ins-c-center-text'>
+                        <Title headingLevel='h1' size={TitleSizes['3xl']}>
+                            {intl.formatMessage(messages.redHatInsightsSecurity)}
+                        </Title>
+                        <Text className='ins-c-center-text'>
+                            {intl.formatMessage(messages.redHatInsightsSecurityBody)}
+                        </Text>
+                        <Button className='ins-c-dashboard-link' component='a' variant='primary' href='https://cloud.redhat.com/insights/' >
+                            {intl.formatMessage(messages.goto)}
+                        </Button>
+                    </TextContent>
+                </FlexItem>
+            </Flex>
         </PageHeader>
         <Main>
             <div className='ins-c-flex-center'>
@@ -72,7 +74,7 @@ const TrustTabs = ({ history, location }) => {
                 </Tabs>
             </div>
         </Main>
-    </React.Fragment >;
+    </React.Fragment>;
 };
 
 TrustTabs.displayName = 'insights-tabs';

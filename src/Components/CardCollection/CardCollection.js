@@ -11,12 +11,12 @@ import {
     Title,
     TitleSizes
 } from '@patternfly/react-core/dist/esm/components';
-import { Split, SplitItem } from '@patternfly/react-core/dist/esm/layouts/Split/index';
+import { Grid, GridItem } from '@patternfly/react-core/dist/esm/layouts/Grid/index';
 
 import React from 'react';
 import propTypes from 'prop-types';
 
-const CardCollection = ({ collectionTitle, collectionDesc, leftCards, rightCards }) => {
+const CardCollection = ({ collectionTitle, collectionDesc, cards }) => {
 
     const cardBuilder = card => <Card className='ins-c-collection-card' isFlat>
         <CardTitle>{card.title}</CardTitle>
@@ -31,14 +31,9 @@ const CardCollection = ({ collectionTitle, collectionDesc, leftCards, rightCards
         {collectionDesc && <TextContent className='ins-c-collection-desc'>
             <Text component={TextVariants.p}>{collectionDesc}</Text>
         </TextContent>}
-        <Split hasGutter>
-            <SplitItem>
-                {leftCards.map(card => cardBuilder(card))}
-            </SplitItem>
-            <SplitItem>
-                {rightCards.map(card => cardBuilder(card))}
-            </SplitItem>
-        </Split>
+        <Grid md={6} lg={6} xl={6} xl2={6} hasGutter>
+            {cards.map(card => <GridItem key={card}> {cardBuilder(card)} </GridItem>)}
+        </Grid>
     </div>;
 };
 
@@ -46,8 +41,7 @@ CardCollection.propTypes = {
     children: propTypes.node,
     collectionTitle: propTypes.string,
     collectionDesc: propTypes.string,
-    leftCards: propTypes.array,
-    rightCards: propTypes.array
+    cards: propTypes.array
 };
 
 export default CardCollection;

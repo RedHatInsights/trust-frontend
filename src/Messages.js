@@ -12,11 +12,6 @@ export default defineMessages({
         description: 'Red Hat Insights provides',
         defaultMessage: 'Red Hat Insights provides a mechanism for users to obtain actionable intelligence regarding suggested improvements to deployed Red Hat software. This document covers the security measures Red Hat puts in place to provide secure transmission, processing, and analysis of this data by those tools.'
     },
-    redHatInsightsSecurityBody2: {
-        id: 'redHatInsightsSecurityBody2',
-        description: 'Red Hat is committed',
-        defaultMessage: 'Red Hat is committed to evaluating, implementing and monitoring the  industry security standards for those tools as they continue to evolve.'
-    },
     goto: {
         id: 'goto',
         description: 'Action go to Red Hat Insights',
