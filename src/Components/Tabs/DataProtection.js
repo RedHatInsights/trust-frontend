@@ -24,12 +24,13 @@ const DataProtection = () => {
         }, {
             title: intl.formatMessage(messages.agileSoftware),
             body: intl.formatMessage(messages.agileSoftwareBody)
-        }, {
+        },  {
             title: intl.formatMessage(messages.restrictedData),
             body: intl.formatMessage(messages.restrictedDataBody)
         }]
     }, {
-        collectionTitle: intl.formatMessage(messages.insightsClientArchitecture),
+        collectionTitle: intl.formatMessage(messages.userAccess),
+        collectionDesc: intl.formatMessage(messages.userAccessBody),
         cards: [{
             title: intl.formatMessage(messages.redhatSso),
             body: intl.formatMessage(messages.redhatSsoBody),

@@ -1,10 +1,10 @@
 {
   "agileSoftware": {
-    "defaultMessage": "Agile Software Delivery Lifecycle",
+    "defaultMessage": "Software-as-a-Service Delivery Lifecycle",
     "description": "Agile Software Delivery Lifecycle"
   },
   "agileSoftwareBody": {
-    "defaultMessage": "Development teams follow an Agile software delivery lifecycle, which means that security-related defects can be addressed rapidly, and software patches are regularly released as part of our continuous delivery model. All software is analyzed with static code analyzers and all reported issues are fixed before code is deployed into production.",
+    "defaultMessage": "Development teams follow a SaaS delivery lifecycle, which means that security-related defects can be addressed rapidly, and software patches are regularly released as part of our continuous delivery model.",
     "description": "Agile Software Delivery Lifecycle body"
   },
   "automaticStale": {
@@ -32,7 +32,7 @@
     "description": "Data Controls & Redaction"
   },
   "dataControlsBody": {
-    "defaultMessage": "Highlighted in the “Insights Client Controls” section of this page, the Red Hat Insights client offers several controls which may be leveraged to inspect what data is collected, redact file, pattern or keywords from being collected, obfuscate IP address or Hostnames and locally audit the payload that is collected by the Insights Client.",
+    "defaultMessage": "Highlighted in the “Insights Client Controls” section of this page, the Red Hat Insights client offers several controls which may be leveraged to inspect what data is collected, redact file, pattern, or keywords from being collected, obfuscate IP address or hostnames and locally audit the payload that is collected by the Insights Client.",
     "description": "Data Controls & Redaction body"
   },
   "dataControlsFooter": {
@@ -64,7 +64,7 @@
     "description": "Encrypted Communication"
   },
   "encryptedCommunicationBody": {
-    "defaultMessage": "All communication with Red Hat occurs over encrypted channels - leveraging TLS & mutual certificate authentication. All data is encrypted in transit and at rest.",
+    "defaultMessage": "All communication with Red Hat occurs over encrypted channels - leveraging Transport Layer Security (TLS) & mutual certificate authentication. All data is encrypted in transit and at rest.",
     "description": "Encrypted Communication Body"
   },
   "faq": {
@@ -76,7 +76,7 @@
     "description": "GDPR & PII"
   },
   "gdprPiiBody": {
-    "defaultMessage": "Red Hat Insights adheres to Red Hat’s policies and guidelines put in place for the European Union’s General Data Protection Regulation.",
+    "defaultMessage": "Red Hat Insights adheres to Red Hat policies and guidelines aligned to the European Union’s General Data Protection Regulation.",
     "description": "GDPR & PII body"
   },
   "gdprPiiFooter": {
@@ -92,7 +92,7 @@
     "description": "Granular controls for Data Redaction"
   },
   "granularControlsBody": {
-    "defaultMessage": "Red Hat Insights provides several optional controls that can be leveraged to redact data on-premise prior to being sent for analysis. Any file, pattern, or keyword can be specified within the Insights-client’s deny list functionality, which will result in the Insights-client to not proceed with collection of what’s been defined.",
+    "defaultMessage": "Red Hat Insights provides several optional controls that can be leveraged to redact data on-premises prior to being sent for analysis. Any file, pattern, or keyword can be specified within the Insights-client’s deny list function, which will omit the specified items from the final collection prior to submission.",
     "description": "Granular controls for Data Redaction body"
   },
   "granularControlsFooter": {
@@ -104,7 +104,7 @@
     "description": "Infrastructure"
   },
   "infrastructureBody": {
-    "defaultMessage": "Security of your data in Red Hat is a priority and every effort is made to ensure that information is not unnecessarily persisted and that it is secured using industry-standard best practices.",
+    "defaultMessage": "The security of your data in Red Hat is a priority. Safeguards include measures designed so that information is not unnecessarily persisted and that data is properly protected.",
     "description": "Infrastructure body"
   },
   "insightsClientArchitecture": {
@@ -112,7 +112,7 @@
     "description": "Insights Client Architecture"
   },
   "insightsClientArchitectureBody": {
-    "defaultMessage": "The Insights Client plays a critical role in extracting metadata from a Red Hat Enterprise Linux host to be analyzed by Red Hat Insights. Several design decisions have been made as well as additional controls available to protect the collection and transmission of host data to meet your needs.",
+    "defaultMessage": "The Insights Client plays a critical role in extracting metadata from a Red Hat Enterprise Linux host to be analyzed by Red Hat Insights. Several privacy controls are available to manage the collection and transmission of host data so that you can tailor what metadata is extracted and transmitted for Insights to analyze.",
     "description": "Insights Client Architecture Description"
   },
   "insightsClientControls": {
@@ -136,7 +136,7 @@
     "description": "IP & Hostname Obfuscation"
   },
   "ipHostnameObfBody": {
-    "defaultMessage": "Some organizations may consider IP and hostnames to be sensitive information they wish to not transmit. Red Hat Insights has optional controls that enable you to easily redact the IP address or hostname from being transmitted to Red Hat and obfuscate the values within the UI. Additional options enable a custom “Display Name” to be entered for the identification of obfuscated hosts.",
+    "defaultMessage": "Some organizations may consider IP addresses and hostnames to be sensitive information they prefer not to transmit to Red Hat. Red Hat Insights has optional controls that enable you to easily exclude the IP address or hostname from the data file transmitted to Red Hat and to obfuscate the values within the user interface. Additional options enable a custom “Display Name” to be entered for the identification of obfuscated hosts. (e.g., “Webserver1”)",
     "description": "IP & Hostname Obfuscation body"
   },
   "ipHostnameObfFooter": {
@@ -156,7 +156,7 @@
     "description": "Leverage existing Firewall rules"
   },
   "leverageExistingFirewallRulesBody": {
-    "defaultMessage": "If a host is already subscribed to Red Hat Subscription Manager (RHSM) or to a connected Red Hat Satellite, the Insights Client by default will leverage those existing established connections for its communication with Red Hat resulting in no additional firewall rules or ports to be added.",
+    "defaultMessage": "If a host is already subscribed to Red Hat Subscription Manager (RHSM) or to a connected Red Hat Satellite, the Insights Client by default will leverage those existing and established connections for its communication with Red Hat. This means that no additional firewall rules or ports must be added.",
     "description": "Leverage existing Firewall rules body"
   },
   "leverageExistingFirewallRulesFooter": {
@@ -168,7 +168,7 @@
     "description": "Minimal Host Impact"
   },
   "minimalHostImpactBody": {
-    "defaultMessage": "The Insights client is designed to activate at its scheduled time, perform the collection, and then shut down. By default, check-ins occur once per day and are staggered with a time delay from each system to minimize network strain. The scheduled time can be overridden via a custom schedule to change the time of day or frequency of the check-in from the default values.",
+    "defaultMessage": "The Insights client is designed to activate at its scheduled time, perform the metadata collection, and then shut down. By default, check-ins occur once per day and check-in time slots are staggered across each system to minimize network strain. A scheduled collection time slot can be overridden via a custom schedule function to change the time of day or frequency of the check-in from the default values on a per-system basis.",
     "description": "Minimal Host Impact body"
   },
   "minimalHostImpactFooter": {
@@ -180,7 +180,7 @@
     "description": "Minimal System Metadata Collected"
   },
   "minimalSystemMetadataBody": {
-    "defaultMessage": "The Insights Client takes the approach of minimal data collection and will pre-process the collection to target specific lines or facts of files where possible. This ensures the overall payload remains small, collecting only what is necessary for analysis and avoids key areas where sensitive data may be stored (ex: core dumps, databases)",
+    "defaultMessage": "The Insights Client collects the minimum necessary metadata and will pre-process this data to target specific lines or facts within files where possible. This ensures the overall payload remains small, collecting what is necessary for analysis and avoiding key areas where sensitive data may be stored (e.g., core dumps, databases).",
     "description": "Minimal System Metadata Collected Body"
   },
   "minimalSystemMetadataFooter": {
@@ -200,7 +200,7 @@
     "description": "Openshift Dedicated"
   },
   "openShiftDedicatedBody": {
-    "defaultMessage": "Red Hat Insights operates off of Red Hat’s own Openshift Dedicated infrastructure.",
+    "defaultMessage": "Red Hat Insights operates on Red Hat’s own Openshift Dedicated infrastructure.",
     "description": "Openshift Dedicated body"
   },
   "openShiftDedicatedFooter": {
@@ -212,7 +212,7 @@
     "description": "Open source client code"
   },
   "openSourceClientCodeBody": {
-    "defaultMessage": "The Insights client was developed with OpenSource principles in mind & the Insights client code is available for viewing.",
+    "defaultMessage": "The Insights client was developed with OpenSource principles in mind & the Insights client code is available for review and contribution.",
     "description": "Open source client code body"
   },
   "openSourceClientCodeFooter": {
@@ -236,11 +236,11 @@
     "description": "Overview"
   },
   "payloadTesting": {
-    "defaultMessage": "Payload testing and review",
+    "defaultMessage": "Local collection inspection and redaction verification",
     "description": "Payload testing and review"
   },
   "payloadTestingBody": {
-    "defaultMessage": "The Insights client has built-in options available to generate a payload archive locally without being sent to Red Hat. This may be used to inspect the contents from the host which Red Hat Insights leverages or to verify any redaction or obfuscation settings leveraged. Additionally, the client has controls to enable an archive to be saved locally for every check-in for auditing.",
+    "defaultMessage": "The Insights client has built-in options available to generate a payload archive locally without sending this archive to Red Hat. This option may be used to inspect the contents of the collection and can be used to verify any redaction or obfuscation settings that you have specified.",
     "description": "Payload testing and review body"
   },
   "payloadTestingFooter": {
@@ -268,23 +268,19 @@
     "description": "Proxy support footer"
   },
   "redHatInsightsSecurity": {
-    "defaultMessage": "Red Hat Insights Security",
+    "defaultMessage": "Red Hat Insights Data & Application Security",
     "description": "Title"
   },
   "redHatInsightsSecurityBody": {
-    "defaultMessage": "Red Hat Insights provides a mechanism for users to obtain actionable intelligence regarding suggested improvements to deployed Red Hat software. This document covers the security measures Red Hat puts in place to provide secure transmission, processing, and analysis of this data by those tools.",
+    "defaultMessage": "Red Hat Insights is a Software-as-a-Service offering that enables users to obtain actionable intelligence regarding their Red Hat Enterprise Linux environments, helping to identify and address operational and vulnerability risks before an issue results in downtime. To do this analysis, small pieces of system metadata are sent to the Red Hat Insights service for analysis. This page covers the measures Red Hat has put into place to help reduce security risks when transmitting, processing, and analyzing this data.",
     "description": "Red Hat Insights provides"
-  },
-  "redHatInsightsSecurityBody2": {
-    "defaultMessage": "Red Hat is committed to evaluating, implementing and monitoring the industry security standards for those tools as they continue to evolve.",
-    "description": "Red Hat is committed"
   },
   "redhatSso": {
     "defaultMessage": "Red Hat SSO Authentication",
     "description": "Red Hat SSO Authentication"
   },
   "redhatSsoBody": {
-    "defaultMessage": "Red Hat Insights on cloud.redhat.com is integrated into Red Hat’s existing Single-Sign-On (SSO) service for user management. This integration enables users to use their existing login credentials that are used by other Red Hat assets such as the Red Hat Customer Portal.",
+    "defaultMessage": "Red Hat Insights on cloud.redhat.com is integrated into Red Hat’s existing Single-Sign-On (SSO) service for user management. This integration enables users to use their existing login credentials that are used to access other Red Hat assets such as the Red Hat Customer Portal.",
     "description": "Red Hat SSO Authentication body"
   },
   "redhatSsoFooter": {
@@ -296,7 +292,7 @@
     "description": "Regulations"
   },
   "regulationsBody": {
-    "defaultMessage": "As a Red Hat product, Red Hat Insights is internally assessed and takes several steps to follow Red Hat’s policies around various Data Regulations.",
+    "defaultMessage": "As a Red Hat product, Red Hat Insights is internally assessed against Red Hat’s Data Regulation policies.",
     "description": "Regulations body"
   },
   "resourceRestrictions": {
@@ -304,7 +300,7 @@
     "description": "Resource Restrictions"
   },
   "resourceRestrictionsBody": {
-    "defaultMessage": "Resource constraints are implemented to limit the client’s usage of the host’s CPU and memory resources and all collection items have automatic timeouts if taking longer than expected.",
+    "defaultMessage": "Resource constraints are implemented to limit the client’s usage of the host’s CPU and memory resources and all collection items have automatic timeouts if they are taking longer than expected.",
     "description": "Resource Restrictions body"
   },
   "restrictedData": {
@@ -312,7 +308,7 @@
     "description": "Restricted Data Access"
   },
   "restrictedDataBody": {
-    "defaultMessage": "Access to systems that handle customer data is controlled via multi-factor authentication and authorization controls. Access is granted on a need to know basis.",
+    "defaultMessage": "Access to systems that handle customer data is controlled via multi-factor authentication and strict authorization controls. Access is granted on a need to know basis and limited for required SaaS infrastructure operations.",
     "description": "Restricted Data Access body"
   },
   "roleBasedAccess": {
@@ -320,12 +316,20 @@
     "description": "Role-Based Access Control"
   },
   "roleBasedAccessBody": {
-    "defaultMessage": "Cloud.redhat.com includes Role-Based Access Control (RBAC) functionality which enables super-users to grant or restrict user logins on their account access to Red Hat Insights and it’s individual services.",
+    "defaultMessage": "Cloud.redhat.com includes Role-Based Access Control (RBAC) functionality which enables administrators to grant or restrict user logins on their account access to Red Hat Insights and its individual services.",
     "description": "Role-Based Access Control Body"
   },
   "roleBasedAccessFooter": {
     "defaultMessage": "Insights User Access Configuration Guide",
     "description": "Role-Based Access Control footer"
+  },
+  "userAccess": {
+    "defaultMessage": "User Access",
+    "description": "User Access"
+  },
+  "userAccessBody": {
+    "defaultMessage": "For user access management, Red Hat Insights uses Red Hat’s Single-Sign-On service and also provides Role Based Access Control (RBAC) functions to help manage user access to Red Hat Insights capabilities and information in a more granular way.",
+    "description": "User Access body"
   },
   "youControlWhat": {
     "defaultMessage": "You control what data is sent to Red Hat for analysis.",
