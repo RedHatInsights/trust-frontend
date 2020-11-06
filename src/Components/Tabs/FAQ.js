@@ -14,7 +14,7 @@ const FAQ = () => {
         (async () => {
             try {
                 const kcsArticleJson = (await API.get('https://access.redhat.com/hydra/rest/drupal/articles/4602981')).data;
-                setContent({ status: 'fulfilled', content: kcsArticleJson.body.html });
+                setContent({ status: 'fulfilled', content: kcsArticleJson.body.text });
             } catch (error) {
                 setContent({ status: 'error', content: '' });
                 throw `${error}`;

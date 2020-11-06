@@ -31,13 +31,17 @@ $top-bottom-margin-lg: var(--pf-global--spacer--lg) 0;
     margin-top: var(--pf-global--spacer--xl) !important;
     padding: var(--pf-global--spacer--xl);
 
+    h2 {
+        font-size: x-large;
+        font-weight: bold;
+    }
+
     p {
         margin-bottom: var(--pf-global--spacer--md);
     }
 
     ul {
         list-style-type: disc;
-        list-style-position: inside;
         padding-left: 2em;
         margin-bottom: var(--pf-global--spacer--md);
     }
