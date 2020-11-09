@@ -32,8 +32,14 @@ $top-bottom-margin-lg: var(--pf-global--spacer--lg) 0;
     padding: var(--pf-global--spacer--xl);
 
     h2 {
+        font-size: xx-large;
+        margin-top: var(--pf-global--spacer--md);
+        margin-bottom: var(--pf-global--spacer--sm);
+    }
+
+    h3 {
         font-size: x-large;
-        font-weight: bold;
+        margin-bottom: var(--pf-global--spacer--sm);
     }
 
     p {

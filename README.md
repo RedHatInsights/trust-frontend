@@ -35,8 +35,18 @@ Note: You will need to set up the Insights environment if you want to develop wi
 
 
 ## Running locally
-Have [insights-proxy](https://github.com/RedHatInsights/insights-proxy) installed under PROXY_PATH
+1. Edit package.json and change appname from `trust` to `insights`:
+```
+  "insights": {
+    "appname": "insights"
+  },
+```
 
+2. Have [insights-proxy](https://github.com/RedHatInsights/insights-proxy) installed under PROXY_PATH and run
 ```shell
 SPANDX_CONFIG="./profiles/local-frontend.js" bash $PROXY_PATH/scripts/run.sh
 ```
+
+3. Run `npm start`
+
+4. Point your browser to https://prod.foo.redhat.com:1337/security/insights
