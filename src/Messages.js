@@ -80,7 +80,7 @@ export default defineMessages({
     onlyOneUploadedBody: {
         id: 'onlyOneUploadedBody',
         description: 'Only one uploaded data - body',
-        defaultMessage: 'For each REHL host or instance, one uploaded data set is stored on the services infrastructure.'
+        defaultMessage: 'For each RHEL host or instance, one uploaded data set is stored on the services infrastructure.'
     },
     insightsClientArchitecture: {
         id: 'insightsClientArchitecture',

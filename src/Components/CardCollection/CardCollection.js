@@ -11,7 +11,11 @@ import {
     Title,
     TitleSizes
 } from '@patternfly/react-core/dist/esm/components';
-import { Grid, GridItem } from '@patternfly/react-core/dist/esm/layouts/Grid/index';
+
+import {
+    Grid,
+    GridItem
+} from '@patternfly/react-core/dist/esm/layouts';
 
 import React from 'react';
 import propTypes from 'prop-types';
@@ -24,15 +28,17 @@ const CardCollection = ({ collectionTitle, collectionDesc, cards }) => {
         {card.footer && <CardFooter>{card.footer}</CardFooter>}
     </Card>;
 
-    return <div className='ins-c-data-collection'>
-        <Title headingLevel='h2' size={TitleSizes.xl} className='ins-c-title'>
-            {collectionTitle}
-        </Title>
-        {collectionDesc && <TextContent className='ins-c-collection-desc'>
-            <Text component={TextVariants.p}>{collectionDesc}</Text>
-        </TextContent>}
-        <Grid md={6} lg={6} xl={6} xl2={6} hasGutter>
-            {cards.map(card => <GridItem key={card}> {cardBuilder(card)} </GridItem>)}
+    return <div className="ins-c-content-section">
+        <Grid hasGutter>
+            <TextContent>
+                <Title headingLevel='h2' size={TitleSizes.xl}>
+                    {collectionTitle}
+                </Title>
+                <Text component={TextVariants.p}>{collectionDesc}</Text>
+            </TextContent>
+            <Grid md={6} lg={6} xl={6} xl2={6} hasGutter>
+                {cards.map(card => <GridItem key={card}> {cardBuilder(card)} </GridItem>)}
+            </Grid>
         </Grid>
     </div>;
 };

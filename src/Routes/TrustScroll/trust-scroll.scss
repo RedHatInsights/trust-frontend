@@ -1,0 +1,19 @@
+@import "~@redhat-cloud-services/frontend-components-utilities/files/Utilities/_all.scss";
+@import "../../App.scss";
+
+.ins-c-dashboard-link {
+    margin: $top-bottom-margin-lg;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.pf-c-jump-links__list {
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $pf-global--breakpoint--md) {
+        flex-direction: row;
+    }
+}
