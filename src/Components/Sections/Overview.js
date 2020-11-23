@@ -1,4 +1,4 @@
-import './overview.scss';
+import './Overview.scss';
 
 import { Card, CardBody, CardTitle, Title, TitleSizes } from '@patternfly/react-core/dist/esm/components';
 import { Grid, GridItem } from '@patternfly/react-core/dist/esm/layouts';
