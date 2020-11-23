@@ -19,8 +19,6 @@ import {
 
 import { PageHeader } from '@redhat-cloud-services/frontend-components';
 import React, { Suspense, lazy } from 'react';
-// import React, { Suspense, lazy, useEffect, useState } from 'react';
-
 import Loading from '../../Components/Loading/Loading';
 import PropTypes from 'prop-types';
 import messages from '../../Messages';

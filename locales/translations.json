@@ -47,7 +47,7 @@
   "minimalSystemMetadataBody": "The Insights Client collects the minimum necessary metadata and will pre-process this data to target specific lines or facts within files where possible. This ensures the overall payload remains small, collecting what is necessary for analysis and avoiding key areas where sensitive data may be stored (e.g., core dumps, databases).",
   "minimalSystemMetadataFooter": "System information collected for Red Hat Insights",
   "onlyOneUploaded": "Only one uploaded data set is stored at a time.",
-  "onlyOneUploadedBody": "For each REHL host or instance, one uploaded data set is stored on the services infrastructure.",
+  "onlyOneUploadedBody": "For each RHEL host or instance, one uploaded data set is stored on the services infrastructure.",
   "openShiftDedicated": "OpenShift Dedicated",
   "openShiftDedicatedBody": "Red Hat Insights operates on Red Hat’s own OpenShift Dedicated infrastructure.",
   "openShiftDedicatedFooter": "Red Hat OpenShift Dedicated",

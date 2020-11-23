@@ -1,8 +1,7 @@
 import './overview.scss';
 
-import { Card, CardBody, CardTitle, TextContent, Title, TitleSizes } from '@patternfly/react-core/dist/esm/components';
-import { Grid } from '@patternfly/react-core/dist/esm/layouts';
-import { Split, SplitItem } from '@patternfly/react-core/dist/esm/layouts/Split';
+import { Card, CardBody, CardTitle, Title, TitleSizes } from '@patternfly/react-core/dist/esm/components';
+import { Grid, GridItem } from '@patternfly/react-core/dist/esm/layouts';
 
 import React from 'react';
 import messages from '../../Messages';
@@ -24,28 +23,27 @@ const OverviewTab = () => {
         title: intl.formatMessage(messages.onlyOneUploaded),
         body: intl.formatMessage(messages.onlyOneUploadedBody)
     }];
-    const cardBuilder = (card, index) => <Card className='ins-c-card' isFlat>
-        <Split>
-            <SplitItem>
-                <span className='ins-c-cardNumber'>{index + 1}.</span>
-            </SplitItem>
-            <SplitItem>
-                <CardTitle>{card.title}</CardTitle>
-                <CardBody>{card.body}</CardBody>
-            </SplitItem>
-        </Split>
+    const cardBuilder = (card) => <Card className='ins-c-numbered-card' isFlat>
+        <CardTitle>
+            <Title headingLevel="h3" size={TitleSizes.xl} aria-hidden='true'>
+                {card.title}
+            </Title>
+        </CardTitle>
+        <CardBody>{card.body}</CardBody>
     </Card>;
 
     return <React.Fragment>
         <Grid hasGutter>
-            <TextContent>
+            <GridItem>
                 <Title headingLevel='h2' size={TitleSizes.lg}>
                     {intl.formatMessage(messages.dataPrivacy)}
                 </Title>
-            </TextContent>
-            <Grid hasGutter>
-                {steps.map((step, index) => cardBuilder(step, index))}
-            </Grid>
+            </GridItem>
+            <GridItem>
+                <ol className='pf-l-grid pf-m-gutter ins-c-numbered-list'>
+                    {steps.map(step => <li className='pf-l-grid__item ins-c-numbered-list__item' key={step}> {cardBuilder(step)} </li>)}
+                </ol>
+            </GridItem>
         </Grid>
     </React.Fragment>;
 };

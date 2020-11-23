@@ -30,15 +30,19 @@ const CardCollection = ({ collectionTitle, collectionDesc, cards }) => {
 
     return <div className="ins-c-content-section">
         <Grid hasGutter>
-            <TextContent>
-                <Title headingLevel='h2' size={TitleSizes.xl}>
-                    {collectionTitle}
-                </Title>
-                <Text component={TextVariants.p}>{collectionDesc}</Text>
-            </TextContent>
-            <Grid md={6} lg={6} xl={6} xl2={6} hasGutter>
-                {cards.map(card => <GridItem key={card}> {cardBuilder(card)} </GridItem>)}
-            </Grid>
+            <GridItem>
+                <TextContent>
+                    <Title headingLevel='h2' size={TitleSizes.xl}>
+                        {collectionTitle}
+                    </Title>
+                    <Text component={TextVariants.p}>{collectionDesc}</Text>
+                </TextContent>
+            </GridItem>
+            <GridItem>
+                <ul className='pf-l-grid pf-m-all-6-col-on-md pf-m-gutter'>
+                    {cards.map(card => <li className='pf-l-grid__item' key={card}> {cardBuilder(card)} </li>)}
+                </ul>
+            </GridItem>
         </Grid>
     </div>;
 };

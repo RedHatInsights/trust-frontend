@@ -117,3 +117,7 @@ $ins-c-width-limiter--breakpoint-map: build-breakpoint-map();
 .pf-c-page__main {
     scroll-behavior: smooth;
 }
+
+.pf-l-grid > ul {
+    display: inherit;
+}

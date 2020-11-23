@@ -1,12 +1,32 @@
-.ins-c-cardNumber {
-    padding-top: var(--pf-global--spacer--lg);
-    padding-left: var(--pf-global--spacer--lg) ;
-    color: var(--pf-global--palette--red-100);
-    font-size: var(--pf-global--icon--FontSize--md);
-    display: inherit;
-    font-weight: var(--pf-global--FontWeight--bold);
+.ins-c-numbered-card {
+    display: grid;
+    grid-template-columns: max-content auto;
+
+    .pf-c-card__title,
+    .pf-c-card__header,
+    .pf-c-card__body,
+    .pf-c-card__footer {
+        grid-column: 2;
+    }
+
+    &::before {
+        grid-column: 1;
+        margin-top: calc(var(--pf-global--spacer--md) + var(--pf-global--spacer--sm));
+        margin-left: var(--pf-global--spacer--lg);
+        content: counter(ins-c-counter) ". ";
+        font-size: var(--pf-global--icon--FontSize--lg);
+        font-weight: var(--pf-global--FontWeight--bold);
+        color: var(--pf-global--palette--red-100);
+    }
 }
 
-.pf-c-card__title {
-    padding-bottom: 0 !important;
+.ins-c-numbered-list {
+    display: grid;
+    gap: var(--pf-global--gutter--md);
+    list-style: none;
+    counter-reset: ins-c-counter;
+}
+
+.ins-c-numbered-list__item {
+    counter-increment: ins-c-counter;
 }
