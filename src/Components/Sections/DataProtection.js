@@ -54,7 +54,8 @@ const DataProtection = () => {
         collectionDesc: intl.formatMessage(messages.regulationsBody),
         cards: [{
             title: intl.formatMessage(messages.gdprPii),
-            body: intl.formatMessage(messages.gdprPiiBody),
+            // eslint-disable-next-line react/display-name
+            body: intl.formatMessage(messages.gdprPiiBody, { break: () => <React.Fragment><br /><br /></React.Fragment> }),
             footer: link(intl.formatMessage(messages.gdprPiiFooter), 'https://www.redhat.com/en/gdpr')
         }, {
             title: intl.formatMessage(messages.dataControls),

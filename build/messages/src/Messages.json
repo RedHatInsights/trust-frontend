@@ -76,7 +76,7 @@
     "description": "GDPR & PII"
   },
   "gdprPiiBody": {
-    "defaultMessage": "Red Hat Insights adheres to Red Hat policies and guidelines aligned to the European Union’s General Data Protection Regulation.",
+    "defaultMessage": "Red Hat Insights adheres to Red Hat policies and guidelines aligned to the European Union’s General Data Protection Regulation. <break></break> The Red Hat Insights client collection does not target Personally Identifiable Information (PII).",
     "description": "GDPR & PII body"
   },
   "gdprPiiFooter": {
@@ -192,7 +192,7 @@
     "description": "Only one uploaded data set is stored at a time."
   },
   "onlyOneUploadedBody": {
-    "defaultMessage": "For each REHL host or instance, one uploaded data set is stored on the services infrastructure.",
+    "defaultMessage": "For each RHEL host or instance, one uploaded data set is stored on the services infrastructure.",
     "description": "Only one uploaded data - body"
   },
   "openShiftDedicated": {

@@ -18,7 +18,7 @@
   "encryptedCommunicationBody": "All communication with Red Hat occurs over encrypted channels - leveraging Transport Layer Security (TLS) & mutual certificate authentication. All data is encrypted in transit and at rest.",
   "faq": "Frequently asked questions",
   "gdprPii": "GDPR & PII",
-  "gdprPiiBody": "Red Hat Insights adheres to Red Hat policies and guidelines aligned to the European Union’s General Data Protection Regulation.",
+  "gdprPiiBody": "Red Hat Insights adheres to Red Hat policies and guidelines aligned to the European Union’s General Data Protection Regulation. <break></break> The Red Hat Insights client collection does not target Personally Identifiable Information (PII).",
   "gdprPiiFooter": "Red Hat’s GDPR Policy and Guidelines",
   "goto": "Go to Red Hat Insights",
   "granularControls": "Granular controls for Data Redaction",

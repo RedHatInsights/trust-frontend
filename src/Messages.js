@@ -405,7 +405,7 @@ export default defineMessages({
     gdprPiiBody: {
         id: 'gdprPiiBody',
         description: 'GDPR & PII body',
-        defaultMessage: 'Red Hat Insights adheres to Red Hat policies and guidelines aligned to the European Union’s General Data Protection Regulation.'
+        defaultMessage: 'Red Hat Insights adheres to Red Hat policies and guidelines aligned to the European Union’s General Data Protection Regulation. <break></break> The Red Hat Insights client collection does not target Personally Identifiable Information (PII).'
     },
     gdprPiiFooter: {
         id: 'gdprPiiFooter',
