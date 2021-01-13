@@ -5,7 +5,7 @@ import Loading from './Components/Loading/Loading';
 import PropTypes from 'prop-types';
 
 const Trust = lazy(() => import(/* webpackChunkName: "Trust" */ './Routes/TrustScroll/TrustScroll'));
-const paths = { trust: '/' };
+const paths = { trust: '' };
 
 const InsightsRoute = ({ component: Component, rootClass, ...rest }) => {
     const root = document.getElementById('root');

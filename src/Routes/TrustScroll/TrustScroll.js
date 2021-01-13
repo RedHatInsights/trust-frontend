@@ -11,16 +11,12 @@ import {
     Title,
     TitleSizes
 } from '@patternfly/react-core/dist/esm/components';
-
-import {
-    Flex,
-    FlexItem
-} from '@patternfly/react-core/dist/esm/layouts';
-
-import { PageHeader } from '@redhat-cloud-services/frontend-components';
+import { Flex, FlexItem } from '@patternfly/react-core/dist/esm/layouts';
 import React, { Suspense, lazy } from 'react';
+
 import Loading from '../../Components/Loading/Loading';
-import PropTypes from 'prop-types';
+import { PageHeader } from '@redhat-cloud-services/frontend-components';
+import { getBaseName } from '@redhat-cloud-services/frontend-components-utilities/files/helpers';
 import messages from '../../Messages';
 import routerParams from '@redhat-cloud-services/frontend-components-utilities/files/RouterParams';
 import { useIntl } from 'react-intl';
@@ -69,7 +65,8 @@ const TrustScroll = () => {
         <PageSection className="pf-u-pt-sm pf-u-pb-0" sticky="top">
             <JumpLinks isCentered scrollableSelector="#root">
                 {jumpLinks.map(item =>
-                    <JumpLinksItem key={item.key} href={`#section-${item.section}`}>
+                    <JumpLinksItem key={item.key} href={`#section-${item.section}`}
+                        onClick={() => window.history.pushState({}, '', `${getBaseName(window.location.pathname)}#section-${item.section}`)}>
                         {item.title}
                     </JumpLinksItem>
                 )}
@@ -92,9 +89,5 @@ const TrustScroll = () => {
 };
 
 TrustScroll.displayName = 'insights-scroll';
-TrustScroll.propTypes = {
-    location: PropTypes.object,
-    history: PropTypes.object
-};
 
 export default routerParams(TrustScroll);
