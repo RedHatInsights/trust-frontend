@@ -105,7 +105,7 @@ export default defineMessages({
     openSourceClientCodeFooter: {
         id: 'openSourceClientCodeFooter',
         description: 'Open source client code footer',
-        defaultMessage: 'Red Had Insights Client Source Code'
+        defaultMessage: 'Red Hat Insights Client Source Code'
     },
     minimalSystemMetadata: {
         id: 'minimalSystemMetadata',

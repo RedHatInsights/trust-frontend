@@ -13,11 +13,14 @@ const registry = getRegistry();
 registry.register({ notifications });
 
 const App = (props) => {
-
-    useEffect(() => {
+    async function initChrome() {
         insights.chrome.init();
         insights.chrome.identifyApp('trust');
-    });
+    }
+
+    useEffect(() => {
+        initChrome();
+    }, []);
 
     return (
         <Provider store={registry.getStore()}>

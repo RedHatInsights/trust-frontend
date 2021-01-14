@@ -53,7 +53,7 @@
   "openShiftDedicatedFooter": "Red Hat OpenShift Dedicated",
   "openSourceClientCode": "Open Source Client Code",
   "openSourceClientCodeBody": "The Insights client was developed with OpenSource principles in mind & the Insights client code is available for review and contribution.",
-  "openSourceClientCodeFooter": "Red Had Insights Client Source Code",
+  "openSourceClientCodeFooter": "Red Hat Insights Client Source Code",
   "optionalHost": "Optional Host Unregistration",
   "optionalHostBody": "The registration of a host to Red Hat Insights may be unregistered manually at any point. Running the unregistration command will disable the Insights client from checking-in and remove the host and its results from Red Hat Insights.",
   "optionalHostFooter": "Unregistering a host",

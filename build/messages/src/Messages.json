@@ -216,7 +216,7 @@
     "description": "Open source client code body"
   },
   "openSourceClientCodeFooter": {
-    "defaultMessage": "Red Had Insights Client Source Code",
+    "defaultMessage": "Red Hat Insights Client Source Code",
     "description": "Open source client code footer"
   },
   "optionalHost": {
