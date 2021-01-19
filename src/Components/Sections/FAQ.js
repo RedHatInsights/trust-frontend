@@ -1,9 +1,7 @@
-import '../../App.scss';
-
+import { Card, CardBody } from '@patternfly/react-core/dist/esm/components';
 import React, { useEffect, useState } from 'react';
 
 import API from '../../Utilities/Api';
-import { Card, CardBody } from '@patternfly/react-core/dist/esm/components';
 import Loading from '../Loading/Loading';
 import ReactMarkdown from 'react-markdown/with-html';
 

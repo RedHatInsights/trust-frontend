@@ -1,5 +1,5 @@
-@import "~@redhat-cloud-services/frontend-components-utilities/files/Utilities/_all.scss";
-@import "../../App.scss";
+@import "~@patternfly/patternfly/sass-utilities/_all";
+$top-bottom-margin-lg: var(--pf-global--spacer--lg) 0;
 
 .ins-c-dashboard-link {
     margin: $top-bottom-margin-lg;
