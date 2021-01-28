@@ -16,9 +16,9 @@ import React, { Suspense, lazy, useEffect } from 'react';
 
 import Loading from '../../Components/Loading/Loading';
 import { PageHeader } from '@redhat-cloud-services/frontend-components';
-import { getBaseName } from '@redhat-cloud-services/frontend-components-utilities/files/helpers';
+import { getBaseName } from '@redhat-cloud-services/frontend-components-utilities/helpers';
 import messages from '../../Messages';
-import routerParams from '@redhat-cloud-services/frontend-components-utilities/files/RouterParams';
+import routerParams from '@redhat-cloud-services/frontend-components-utilities/RouterParams';
 import { useIntl } from 'react-intl';
 
 const Overview = lazy(() => import(/* webpackChunkName: "Overview" */ '../../Components/Sections/Overview'));
