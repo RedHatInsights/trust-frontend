@@ -41,7 +41,7 @@ const OverviewTab = () => {
             </GridItem>
             <GridItem>
                 <ol className='pf-l-grid pf-m-gutter ins-c-numbered-list'>
-                    {steps.map(step => <li className='pf-l-grid__item ins-c-numbered-list__item' key={step}> {cardBuilder(step)} </li>)}
+                    {steps.map(step => <li className='pf-l-grid__item ins-c-numbered-list__item' key={step.title}> {cardBuilder(step)} </li>)}
                 </ol>
             </GridItem>
         </Grid>

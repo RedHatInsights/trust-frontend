@@ -11,7 +11,6 @@ import {
     Title,
     TitleSizes
 } from '@patternfly/react-core/dist/esm/components';
-
 import {
     Grid,
     GridItem
@@ -40,7 +39,7 @@ const CardCollection = ({ collectionTitle, collectionDesc, cards }) => {
             </GridItem>
             <GridItem>
                 <ul className='pf-l-grid pf-m-all-6-col-on-md pf-m-gutter'>
-                    {cards.map(card => <li className='pf-l-grid__item' key={card}> {cardBuilder(card)} </li>)}
+                    {cards.map(card => <li className='pf-l-grid__item' key={card.title}> {cardBuilder(card)} </li>)}
                 </ul>
             </GridItem>
         </Grid>

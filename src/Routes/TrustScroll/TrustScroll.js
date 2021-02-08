@@ -18,7 +18,6 @@ import Loading from '../../Components/Loading/Loading';
 import { PageHeader } from '@redhat-cloud-services/frontend-components';
 import { getBaseName } from '@redhat-cloud-services/frontend-components-utilities/helpers';
 import messages from '../../Messages';
-import routerParams from '@redhat-cloud-services/frontend-components-utilities/RouterParams';
 import { useIntl } from 'react-intl';
 
 const Overview = lazy(() => import(/* webpackChunkName: "Overview" */ '../../Components/Sections/Overview'));
@@ -46,7 +45,7 @@ const TrustScroll = () => {
 
     useEffect(() => {
         const hash = document.location.hash;
-        hash && setTimeout(() => document.querySelector(hash).scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+        hash && setTimeout(() => document.querySelector(hash).scrollIntoView({ behavior: 'smooth', block: 'start' }), 400);
     }, []);
 
     return <div className="ins-c-marketing-page">
@@ -93,4 +92,4 @@ const TrustScroll = () => {
 
 TrustScroll.displayName = 'insights-scroll';
 
-export default routerParams(TrustScroll);
+export default TrustScroll;
