@@ -38,7 +38,7 @@ const DataProtection = () => {
         }, {
             title: intl.formatMessage(messages.roleBasedAccess),
             body: intl.formatMessage(messages.roleBasedAccessBody),
-            footer: link(intl.formatMessage(messages.roleBasedAccessFooter), 'https://access.redhat.com/documentation/en-us/red_hat_insights/2020-04/html/user_access_configuration_guide_for_red_hat_insights/index')
+            footer: link(intl.formatMessage(messages.roleBasedAccessFooter), 'https://access.redhat.com/documentation/en-us/red_hat_insights/2020-10/html/user_access_configuration_guide_for_red_hat_insights/index')
         }]
     }, {
         collectionTitle: intl.formatMessage(messages.dataRetention),
@@ -60,7 +60,7 @@ const DataProtection = () => {
         }, {
             title: intl.formatMessage(messages.dataControls),
             body: intl.formatMessage(messages.dataControlsBody),
-            footer: link(intl.formatMessage(messages.dataControlsFooter), 'https://docs.google.com/document/d/1A7XnHrgAifFb-DH14P0QI1WcbP_8HVpTK83Bssvx8jA/edit?ts=5f452b87#heading=h.gni941inqxhg')
+            footer: link(intl.formatMessage(messages.dataControlsFooter), 'https://cloud.redhat.com/security/insights#section-data-collection')
         }]
     }];
 
