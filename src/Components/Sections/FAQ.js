@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 
 import API from '../../Utilities/Api';
 import Loading from '../Loading/Loading';
-import ReactMarkdown from 'react-markdown/with-html';
+import Markdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
 
 const FAQ = () => {
     const [content, setContent] = useState({ status: 'pending', content: '' });
@@ -24,7 +26,7 @@ const FAQ = () => {
         {(content.status === 'pending' || content.status === 'error') && <Loading />}
         {content.status === 'fulfilled' && <Card className='faq-card'>
             <CardBody>
-                <ReactMarkdown source={content.content} escapeHtml={false} />
+                <Markdown rehypePlugins={[rehypeRaw, rehypeSanitize]}>{content.content}</Markdown>
             </CardBody>
         </Card>}
     </React.Fragment>;
