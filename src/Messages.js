@@ -330,7 +330,7 @@ export default defineMessages({
     roleBasedAccessBody: {
         id: 'roleBasedAccessBody',
         description: 'Role-Based Access Control Body',
-        defaultMessage: 'Cloud.redhat.com includes Role-Based Access Control (RBAC) functionality which enables administrators to grant or restrict user logins on their account access to Red Hat Insights and its individual services.'
+        defaultMessage: 'Console.redhat.com includes Role-Based Access Control (RBAC) functionality which enables administrators to grant or restrict user logins on their account access to Red Hat Insights and its individual services.'
     },
     roleBasedAccessFooter: {
         id: 'roleBasedAccessFooter',
@@ -355,7 +355,7 @@ export default defineMessages({
     redhatSsoBody: {
         id: 'redhatSsoBody',
         description: 'Red Hat SSO Authentication body',
-        defaultMessage: 'Red Hat Insights on cloud.redhat.com is integrated into Red Hat’s existing Single-Sign-On (SSO) service for user management. This integration enables users to use their existing login credentials that are used to access other Red Hat assets such as the Red Hat Customer Portal.'
+        defaultMessage: 'Red Hat Insights on console.redhat.com is integrated into Red Hat’s existing Single-Sign-On (SSO) service for user management. This integration enables users to use their existing login credentials that are used to access other Red Hat assets such as the Red Hat Customer Portal.'
     },
     redhatSsoFooter: {
         id: 'redhatSsoFooter',

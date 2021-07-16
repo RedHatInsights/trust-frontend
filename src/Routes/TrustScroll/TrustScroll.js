@@ -59,7 +59,7 @@ const TrustScroll = () => {
                     <Text>
                         {intl.formatMessage(messages.redHatInsightsSecurityBody)}
                     </Text>
-                    <Button className='ins-c-dashboard-link' component='a' variant='primary' href='https://cloud.redhat.com/insights/' >
+                    <Button className='ins-c-dashboard-link' component='a' variant='primary' href='https://console.redhat.com/insights/' >
                         {intl.formatMessage(messages.goto)}
                     </Button>
                 </TextContent>

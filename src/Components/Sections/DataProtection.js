@@ -60,7 +60,7 @@ const DataProtection = () => {
         }, {
             title: intl.formatMessage(messages.dataControls),
             body: intl.formatMessage(messages.dataControlsBody),
-            footer: link(intl.formatMessage(messages.dataControlsFooter), 'https://cloud.redhat.com/security/insights#section-data-collection')
+            footer: link(intl.formatMessage(messages.dataControlsFooter), 'https://console.redhat.com/security/insights#section-data-collection')
         }]
     }];
 
