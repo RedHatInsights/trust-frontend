@@ -38,7 +38,7 @@ const DataProtection = () => {
         }, {
             title: intl.formatMessage(messages.roleBasedAccess),
             body: intl.formatMessage(messages.roleBasedAccessBody),
-            footer: link(intl.formatMessage(messages.roleBasedAccessFooter), 'https://access.redhat.com/documentation/en-us/red_hat_insights/2020-10/html/user_access_configuration_guide_for_red_hat_insights/index')
+            footer: link(intl.formatMessage(messages.roleBasedAccessFooter), 'https://access.redhat.com/documentation/en-us/red_hat_hybrid_cloud_console/2022/html-single/user_access_configuration_guide_for_role-based_access_control_rbac/index')
         }]
     }, {
         collectionTitle: intl.formatMessage(messages.dataRetention),
