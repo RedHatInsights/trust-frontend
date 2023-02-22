@@ -36,11 +36,11 @@ const DataCollection = () => {
         cards: [{
             title: intl.formatMessage(messages.ipHostnameObf),
             body: intl.formatMessage(messages.ipHostnameObfBody),
-            footer: link(intl.formatMessage(messages.ipHostnameObfFooter), 'https://access.redhat.com/documentation/en-us/red_hat_insights/2020-10/html/client_configuration_guide_for_red_hat_insights/red-hat-insights-client-data-obfuscation#ipv4_address_obfuscation')
+            footer: link(intl.formatMessage(messages.ipHostnameObfFooter), 'https://access.redhat.com/documentation/en-us/red_hat_insights/2023/html/client_configuration_guide_for_red_hat_insights/con-insights-client-cg-data-obfuscation_insights-cg-obfuscation#proc-obfuscating-ipv4-address_insights-cg-obfuscation')
         }, {
             title: intl.formatMessage(messages.minimalHostImpact),
             body: intl.formatMessage(messages.minimalHostImpactBody),
-            footer: link(intl.formatMessage(messages.minimalHostImpactFooter), 'https://access.redhat.com/documentation/en-us/red_hat_insights/2020-10/html/client_configuration_guide_for_red_hat_insights/changing-the-client-schedule')
+            footer: link(intl.formatMessage(messages.minimalHostImpactFooter), 'https://access.redhat.com/documentation/en-us/red_hat_insights/2023/html/client_configuration_guide_for_red_hat_insights/con-insights-changing-the-client-schedule_insights-cg-changing-schedule')
         }, {
             title: intl.formatMessage(messages.proxySupport),
             body: intl.formatMessage(messages.proxySupportBody),
@@ -48,11 +48,11 @@ const DataCollection = () => {
         }, {
             title: intl.formatMessage(messages.granularControls),
             body: intl.formatMessage(messages.granularControlsBody),
-            footer: link(intl.formatMessage(messages.granularControlsFooter), 'https://access.redhat.com/documentation/en-us/red_hat_insights/2020-10/html/client_configuration_guide_for_red_hat_insights/red-hat-insights-client-data-redaction')
+            footer: link(intl.formatMessage(messages.granularControlsFooter), 'https://access.redhat.com/documentation/en-us/red_hat_insights/2023/html/client_configuration_guide_for_red_hat_insights/con-insights-client-data-redaction_insights-cg-data-redaction')
         }, {
             title: intl.formatMessage(messages.payloadTesting),
             body: intl.formatMessage(messages.payloadTestingBody),
-            footer: link(intl.formatMessage(messages.payloadTestingFooter), 'https://access.redhat.com/documentation/en-us/red_hat_insights/2020-10/html/client_configuration_guide_for_red_hat_insights/red-hat-insights-client-data-redaction#validating-remove.conf-file')
+            footer: link(intl.formatMessage(messages.payloadTestingFooter), 'https://access.redhat.com/documentation/en-us/red_hat_insights/2023/html/client_configuration_guide_for_red_hat_insights/con-insights-client-data-redaction_insights-cg-data-redaction#con-redaction-and-config-file-use_insights-cg-data-redaction')
         }, {
             title: intl.formatMessage(messages.optionalHost),
             body: intl.formatMessage(messages.optionalHostBody),
