@@ -1,58 +1,55 @@
-[![Build Status](https://travis-ci.org/RedHatInsights/trust-frontend.svg?branch=master)](https://travis-ci.org/RedHatInsights/trust-frontend)
+[![Build Status](https://travis-ci.org/RedHatInsights/frontend-starter-app.svg?branch=master)](https://travis-ci.org/RedHatInsights/frontend-starter-app)
 
-# trust-frontend
+# frontend-starter-app
 
-The purpose of this page is to act as a centralized resource via a vanity URL that can be accessed unauthenticated to enable prospective adopters of Insights to learn more about what security measures and controls we have in place. This page should be a high level so it can be available for our users (sysadmins) while also functional approvers such as Management or Security teams who need to approve usage.
+React.js starter app for Red Hat Insights products that includes Patternfly 4 and shared Red Hat cloud service frontend components.
 
-## Getting Started
+## Alternative
 
-There is a [comprehensive quick start guide in the Storybook Documentation](https://github.com/RedHatInsights/insights-frontend-storybook/blob/master/src/docs/welcome/quickStart/DOC.md) to setting up an Insights environment complete with:
+Before using this template, please check the [create-crc-app](https://github.com/RedHatInsights/frontend-components/blob/master/packages/docs/pages/ui-onboarding/create-crc-app.mdx). It has some extra setup you may like.
 
-- Insights Frontend Trust App
+## Initial etc/hosts setup
 
-- [Insights Chroming](https://github.com/RedHatInsights/insights-chrome)
-- [Insights Proxy](https://github.com/RedHatInsights/insights-proxy)
+In order to access the https://[env].foo.redhat.com in your browser, you have to add entries to your `/etc/hosts` file. This is a **one-time** setup that has to be done only once (unless you modify hosts) on each devel machine.
 
-Note: You will need to set up the Insights environment if you want to develop with the trust app due to the consumption of the chroming service as well as setting up your global/app navigation through the API.
+Best way is to edit manually `/etc/hosts` on your localhost line:
 
-## Build app
+```
+127.0.0.1 <your-fqdn> localhost prod.foo.redhat.com stage.foo.redhat.com
+```
+
+Alternatively you can do this by running following command:
+```bash
+npm run patch:hosts
+```
+
+If this command throws an error run it as a `sudo`:
+```bash
+sudo npm run patch:hosts
+```
+
+## Getting started
 
 1. ```npm install```
 
 2. ```npm run start```
-    - starts webpack bundler and serves the files with webpack dev server
 
-OR 
+3. Open browser in URL listed in the terminal output
 
-2. ```npm run start:proxy```
-  - starts webpack bundler and serves the files with webpack dev server and runs chrome proxy (prod env) (one less terminal required)
+Update `appUrl` string inside `fec.config.js` according to your application URL. [Read more](http://front-end-docs-insights.apps.ocp4.prod.psi.redhat.com/ui-onboarding/fec-binary#TODO:documentalloptions).
 
-3. visit ```https://prod.foo.redhat.com:1337/insights/dashboard/```
-### How it works
+### Testing
 
-- any push to the `{REPO}` `master` branch will deploy to a `{REPO}-build` `ci-beta` branch
-- any push to the `{REPO}` `ci-stable` branch will deploy to a `{REPO}-build` `ci-stable` branch
-- any push to the `{REPO}` `qa-beta` branch will deploy to a `{REPO}-build` `qa-beta` branch
-- any push to the `{REPO}` `qa-stable` branch will deploy to a `{REPO}-build` `qa-stable` branch
-- any push to the `{REPO}` `prod-beta` branch will deploy to a `{REPO}-build` `prod-beta` branch
-- any push to the `{REPO}` `prod-stable` branch will deploy to a `{REPO}-build` `prod-stable` branch
-- Pull requests (based on master) will not be pushed to `{REPO}-build` `master` branch
-  - If the PR is accepted and merged, master will be rebuilt and will deploy to `{REPO}-build` `ci-beta` branch
+`npm run verify` will run `npm run lint` (eslint) and `npm test` (Jest)
 
+## Deploying
 
-## Running locally
-1. Edit package.json and change appname from `trust` to `insights`:
-```
-  "insights": {
-    "appname": "insights"
-  },
-```
-
-2. Have [insights-proxy](https://github.com/RedHatInsights/insights-proxy) installed under PROXY_PATH and run (if not running start:proxy)
-```shell
-SPANDX_CONFIG="./profiles/local-frontend.js" bash $PROXY_PATH/scripts/run.sh
-```
-
-3. Run `npm start`
-
-4. Point your browser to https://prod.foo.redhat.com:1337/security/insights
+- The starter repo uses Travis to deploy the webpack build to another Github repo defined in `.travis.yml`
+  - That Github repo has the following branches:
+    - `ci-beta` (deployed by pushing to `master` or `main` on this repo)
+    - `ci-stable` (deployed by pushing to `ci-stable` on this repo)
+    - `qa-beta` (deployed by pushing to `qa-beta` on this repo)
+    - `qa-stable` (deployed by pushing to `qa-stable` on this repo)
+    - `prod-beta` (deployed by pushing to `prod-beta` on this repo)
+    - `prod-stable` (deployed by pushing to `prod-stable` on this repo)
+- Travis uploads results to RedHatInsight's [codecov](https://codecov.io) account. To change the account, modify CODECOV_TOKEN on https://travis-ci.com/.

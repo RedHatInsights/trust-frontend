@@ -1,82 +1,32 @@
-require.extensions['.css'] = () => undefined;
-const path = require('path');
-const glob = require('glob');
-
-// Mapper for Patternly components
-const mapper = {
-    TextVariants: 'Text',
-    DropdownPosition: 'dropdownConstants',
-    EmptyStateVariant: 'EmptyState',
-    TextListItemVariants: 'TextListItem',
-    TextListVariants: 'TextList'
-};
-
-// Mapper for cloud-services components
-const FECMapper = {
-    SkeletonSize: 'Skeleton',
-    PageHeaderTitle: 'PageHeader'
-};
-
 module.exports = {
-    presets: [
-        '@babel/env',
-        '@babel/react'
+  presets: [
+    // Polyfills
+    '@babel/env',
+    // Allow JSX syntax
+    '@babel/react',
+    '@babel/preset-typescript',
+  ],
+  plugins: [
+    // Put _extends helpers in their own file
+    '@babel/plugin-transform-runtime',
+    // Support for {...props} via Object.assign({}, props)
+    '@babel/plugin-proposal-object-rest-spread',
+    // Devs tend to write `import { someIcon } from '@patternfly/react-icons';`
+    // This transforms the import to be specific which prevents having to parse 2k+ icons
+    // Also prevents potential bundle size blowups with CJS
+    [
+      'transform-imports',
+      {
+        '@patternfly/react-icons': {
+          transform: (importName) =>
+            `@patternfly/react-icons/dist/js/icons/${importName
+              .split(/(?=[A-Z])/)
+              .join('-')
+              .toLowerCase()}`,
+          preventFullImport: true,
+        },
+      },
+      'react-icons',
     ],
-    plugins: [
-        '@babel/plugin-transform-runtime',
-        '@babel/plugin-syntax-dynamic-import',
-        '@babel/plugin-proposal-object-rest-spread',
-        '@babel/plugin-proposal-class-properties',
-        [
-            'transform-imports',
-            {
-                '@patternfly/react-core': {
-                    transform: (importName) => {
-                        const files = glob.sync(
-                            path.resolve(
-                                __dirname,
-                                `./node_modules/@patternfly/react-core/dist/js/**/${mapper[
-                                importName
-                                ] || importName}.js`
-                            )
-                        );
-                        if (files.length > 0) {
-                            return files[0].replace(/.*(?=@patternfly)/, '');
-                        } else {
-                            throw `File with importName ${importName} does not exist`;
-                        }
-                    },
-                    preventFullImport: false,
-                    skipDefaultConversion: true
-                }
-            },
-            'react-core'
-        ],
-        [
-            'transform-imports',
-            {
-                '@patternfly/react-icons': {
-                    transform: (importName) =>
-                        `@patternfly/react-icons/dist/js/icons/${importName
-                        .split(/(?=[A-Z])/)
-                        .join('-')
-                        .toLowerCase()}`,
-                    preventFullImport: true
-                }
-            },
-            'react-icons'
-        ],
-        [
-            'transform-imports',
-            {
-                '@redhat-cloud-services/frontend-components': {
-                    transform: (importName) =>
-                        `@redhat-cloud-services/frontend-components/${FECMapper[importName] || importName}`,
-                    preventFullImport: false,
-                    skipDefaultConversion: true
-                }
-            },
-            'frontend-components'
-        ]
-    ]
+  ],
 };
