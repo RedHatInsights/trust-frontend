@@ -1,26 +1,12 @@
-import React, { Suspense, lazy, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 
-import {
-  Button, Grid, GridItem,
-  Spinner,
-  Stack,
-  StackItem, Tab, Tabs, TabTitleText,
-  Title
-} from '@patternfly/react-core';
+import { Grid, GridItem, Title } from '@patternfly/react-core';
 import { Main } from '@redhat-cloud-services/frontend-components/Main';
 import {
   PageHeader,
   PageHeaderTitle,
 } from '@redhat-cloud-services/frontend-components/PageHeader';
-import { addNotification } from '@redhat-cloud-services/frontend-components-notifications/redux';
-
-const SampleComponent = lazy(
-  () => import('../../Components/SampleComponent/sample-component')
-);
-
 import './vuln-page.scss';
-import AppLink from '../../Components/AppLink';
 
 /**
  * A smart component that handles all the api calls and data needed by the dumb components.
@@ -30,21 +16,9 @@ import AppLink from '../../Components/AppLink';
  * https://medium.com/@thejasonfile/dumb-components-and-smart-components-e7b33a698d43
  */
 const VulnPage = () => {
-  const dispatch = useDispatch();
-
   useEffect(() => {
     insights?.chrome?.appAction?.('sample-page');
   }, []);
-
-  const handleAlert = () => {
-    dispatch(
-      addNotification({
-        variant: 'success',
-        title: 'Notification title',
-        description: 'notification description',
-      })
-    );
-  };
 
   return (
     <React.Fragment>
@@ -64,16 +38,11 @@ const VulnPage = () => {
               <GridItem span={6}>
                 <Title headingLevel="h3">Updated 31 Oct, 1992</Title>
               </GridItem>
-              <GridItem>
-                [link to prodsec CVE/advisory page]
-              </GridItem>
-              <GridItem>
-              </GridItem>
+              <GridItem>[link to prodsec CVE/advisory page]</GridItem>
+              <GridItem></GridItem>
             </Grid>
           </GridItem>
-          <GridItem span={4}>
-            RHS
-          </GridItem>
+          <GridItem span={4}>RHS</GridItem>
         </Grid>
       </Main>
     </React.Fragment>

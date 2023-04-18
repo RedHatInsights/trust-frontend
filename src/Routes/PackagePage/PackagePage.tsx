@@ -1,38 +1,26 @@
-import React, { Suspense, lazy, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-  Button,
   Grid,
   GridItem,
-  Spinner,
-  Stack,
-  StackItem,
+  Label,
   Tab,
   TabTitleText,
   Tabs,
-  Title, Label
+  Title,
 } from '@patternfly/react-core';
 import { Main } from '@redhat-cloud-services/frontend-components/Main';
 import {
   PageHeader,
   PageHeaderTitle,
 } from '@redhat-cloud-services/frontend-components/PageHeader';
-import { addNotification } from '@redhat-cloud-services/frontend-components-notifications/redux';
-
-const SampleComponent = lazy(
-  () => import('../../Components/SampleComponent/sample-component')
-);
-
 import './package-page.scss';
-import AppLink from '../../Components/AppLink';
 import {
   loadPackage,
   selectDependants,
   selectDependencies,
   selectPackageDetails,
-  setDependants,
-  setDependencies,
 } from '../../store/package';
 import Dependency from '../../Components/Dependency/dependency';
 import { useLocation, useParams } from 'react-router-dom';
@@ -65,7 +53,7 @@ const PackagePage = () => {
   }, []);
 
   const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
-  const [isBox, setIsBox] = React.useState<boolean>(false);
+  const [isBox] = React.useState<boolean>(false);
   // Toggle currently active tab
   const handleTabClick = (
     event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
@@ -95,7 +83,9 @@ const PackagePage = () => {
         <Grid>
           <GridItem span={8}>
             {/*<Title headingLevel='h1'>Package long name</Title>*/}
-            <Title headingLevel="h2">{purl} {trusted_badge}</Title>
+            <Title headingLevel="h2">
+              {purl} {trusted_badge}
+            </Title>
             <Grid hasGutter>
               <GridItem span={6}>
                 <Title headingLevel="h3">Published 4 months ago</Title>
@@ -120,7 +110,14 @@ const PackagePage = () => {
                     title={<TabTitleText>Dependencies</TabTitleText>}
                   >
                     {dependencies.map((dep: any) => {
-                      return <Dependency purl={dep.purl} href={dep.href} trusted={dep.trusted}/>;
+                      return (
+                        <Dependency
+                          key={dep.purl}
+                          purl={dep.purl}
+                          href={dep.href}
+                          trusted={dep.trusted}
+                        />
+                      );
                     })}
                   </Tab>
                   <Tab
@@ -128,7 +125,13 @@ const PackagePage = () => {
                     title={<TabTitleText>Dependents</TabTitleText>}
                   >
                     {dependants.map((dep: any) => {
-                      return <Dependant purl={dep.purl} href={dep.href} />;
+                      return (
+                        <Dependant
+                          key={dep.purl}
+                          purl={dep.purl}
+                          href={dep.href}
+                        />
+                      );
                     })}
                   </Tab>
                   <Tab

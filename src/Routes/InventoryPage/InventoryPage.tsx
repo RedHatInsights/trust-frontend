@@ -1,53 +1,17 @@
-import React, { Suspense, lazy, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  Button,
-  Grid,
-  GridItem,
-  Spinner,
-  Stack,
-  StackItem,
-  Tab,
-  TabTitleText,
-  Tabs,
-  TextInput,
-  Title,
-} from '@patternfly/react-core';
+import { Grid, GridItem, TextInput } from '@patternfly/react-core';
 import { Main } from '@redhat-cloud-services/frontend-components/Main';
 import {
   PageHeader,
   PageHeaderTitle,
 } from '@redhat-cloud-services/frontend-components/PageHeader';
-import { addNotification } from '@redhat-cloud-services/frontend-components-notifications/redux';
-
-const SampleComponent = lazy(
-  () => import('../../Components/SampleComponent/sample-component')
-);
-
 import './inventory-page.scss';
 import AppLink from '../../Components/AppLink';
-import {
-  loadPackage,
-  selectDependants,
-  selectDependencies,
-  setDependants,
-  setDependencies,
-} from '../../store/package';
-import Dependency from '../../Components/Dependency/dependency';
-import { useLocation, useParams } from 'react-router-dom';
-import Dependant from '../../Components/Dependant/dependant';
+import { useLocation } from 'react-router-dom';
 import { loadInventory, selectInventory } from '../../store/inventory';
-import {
-  Table,
-  TableComposable,
-  TableHeader,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
-} from '@patternfly/react-table';
+import { TableComposable, Tbody, Td, Tr } from '@patternfly/react-table';
 
 /**
  * A smart component that handles all the api calls and data needed by the dumb components.
@@ -70,16 +34,6 @@ const InventoryPage = () => {
   useEffect(() => {
     insights?.chrome?.appAction?.('sample-page');
   }, []);
-
-  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
-  const [isBox, setIsBox] = React.useState<boolean>(false);
-  // Toggle currently active tab
-  const handleTabClick = (
-    event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
-    tabIndex: string | number
-  ) => {
-    setActiveTabKey(tabIndex);
-  };
 
   const [filter, setFilter] = React.useState<string>('');
   const [filteredInventory, setFilteredInventory] = React.useState<any>([]);

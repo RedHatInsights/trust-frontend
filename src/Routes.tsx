@@ -52,12 +52,12 @@ const NoPermissionsPage = lazy(
     )
 );
 
-const InventoryPage = lazy (
+const InventoryPage = lazy(
   () =>
     import(
       /* webpackChunkName: "InventoryPage" */ './Routes/InventoryPage/InventoryPage'
-      )
-)
+    )
+);
 
 export const Routes = () => (
   <Suspense

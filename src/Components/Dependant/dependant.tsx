@@ -1,8 +1,7 @@
 import './dependant.scss';
 import React from 'react';
-import * as H from 'history';
 import AppLink from '../AppLink';
-import { PackageURL } from 'packageurl-js';
+//import { PackageURL } from 'packageurl-js';
 import { Card, CardBody } from '@patternfly/react-core';
 
 export interface DependencyProps {
@@ -17,14 +16,18 @@ export interface DependencyProps {
  * @param props the props given by the smart component.
  */
 const Dependant: React.VFC<DependencyProps> = (props: DependencyProps) => {
-  console.log( "dependent -> ", props.purl);
-  const purl = PackageURL.fromString(props.purl);
+  console.log('dependent -> ', props.purl);
+  //const purl = PackageURL.fromString(props.purl);
 
-  return (<Card>
-    <CardBody>
-      <AppLink to={'/package/' + encodeURIComponent(props.purl)}>{props.purl}</AppLink>
-    </CardBody>
-  </Card>);
+  return (
+    <Card>
+      <CardBody>
+        <AppLink to={'/package/' + encodeURIComponent(props.purl)}>
+          {props.purl}
+        </AppLink>
+      </CardBody>
+    </Card>
+  );
 };
 
 Dependant.displayName = 'Dependant';

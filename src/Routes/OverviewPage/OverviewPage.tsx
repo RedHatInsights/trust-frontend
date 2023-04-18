@@ -1,31 +1,18 @@
-import React, { Suspense, lazy, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 
 import {
-  Button,
-  Spinner,
-  Stack,
-  StackItem,
-  Title,
+  Card,
+  CardBody,
+  CardTitle,
   Grid,
   GridItem,
-  Card,
-  CardTitle,
-  CardBody,
 } from '@patternfly/react-core';
 import { Main } from '@redhat-cloud-services/frontend-components/Main';
 import {
   PageHeader,
   PageHeaderTitle,
 } from '@redhat-cloud-services/frontend-components/PageHeader';
-import { addNotification } from '@redhat-cloud-services/frontend-components-notifications/redux';
-
-const SampleComponent = lazy(
-  () => import('../../Components/SampleComponent/sample-component')
-);
-
 import './overview-page.scss';
-import AppLink from '../../Components/AppLink';
 
 /**
  * A smart component that handles all the api calls and data needed by the dumb components.
@@ -35,21 +22,9 @@ import AppLink from '../../Components/AppLink';
  * https://medium.com/@thejasonfile/dumb-components-and-smart-components-e7b33a698d43
  */
 const OverviewPage = () => {
-  const dispatch = useDispatch();
-
   useEffect(() => {
     insights?.chrome?.appAction?.('sample-page');
   }, []);
-
-  const handleAlert = () => {
-    dispatch(
-      addNotification({
-        variant: 'success',
-        title: 'Notification title',
-        description: 'notification description',
-      })
-    );
-  };
 
   return (
     <React.Fragment>
@@ -61,9 +36,7 @@ const OverviewPage = () => {
         <Grid hasGutter>
           <GridItem span={12}>
             <Card>
-              <CardBody>
-                Upload an SBOM etc
-              </CardBody>
+              <CardBody>Upload an SBOM etc</CardBody>
             </Card>
           </GridItem>
           <GridItem span={6}>
@@ -80,10 +53,10 @@ const OverviewPage = () => {
             <Card>
               <CardTitle> Subscribe </CardTitle>
               <CardBody>
-                Large enterprises to single developers, we have the right subscription for you.
+                Large enterprises to single developers, we have the right
+                subscription for you.
               </CardBody>
             </Card>
-
           </GridItem>
         </Grid>
         {/*

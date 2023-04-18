@@ -3,7 +3,11 @@ import promiseMiddleware from 'redux-promise-middleware';
 import notificationsMiddleware from '@redhat-cloud-services/frontend-components-notifications/notificationsMiddleware';
 import ReducerRegistry from '@redhat-cloud-services/frontend-components-utilities/ReducerRegistry';
 import { Middleware, Reducer } from 'redux';
-import { dependantsReducer, dependenciesReducer, loadPackage, packageDetailsReducer } from './package';
+import {
+  dependantsReducer,
+  dependenciesReducer,
+  packageDetailsReducer,
+} from './package';
 import thunk from 'redux-thunk';
 import reduceReducers from 'reduce-reducers';
 import { inventoryReducer } from './inventory';
@@ -15,7 +19,7 @@ export function init(...middleware: Middleware[]) {
     thunk,
     promiseMiddleware,
     notificationsMiddleware({ errorDescriptionKey: ['detail', 'stack'] }),
-    ...middleware
+    ...middleware,
   ]);
   //registry.register({ 'trust/loadPackage': loadPackage });
   //registry.register({ trust: dependenciesReducer });
